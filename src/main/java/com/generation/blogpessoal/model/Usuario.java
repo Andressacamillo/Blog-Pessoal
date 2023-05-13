@@ -28,7 +28,7 @@ public class Usuario {
 
 	@NotNull(message = "O Atributo Nome é Obrigatório!")
 	private String nome;
-
+	
 	@Schema(example = "email@email.com.br")
 	@NotNull(message = "O Atributo Usuário é Obrigatório!")
 	@Email(message = "O Atributo Usuário deve ser um email válido!")
@@ -38,13 +38,14 @@ public class Usuario {
 	@Size(min = 8, message = "A Senha deve ter no mínimo 8 caracteres")
 	private String senha;
 
-	@Size(max = 5000, message = "O link da foto não poderá ser maior que 5000 caracteres")
+	@Size(max = 5000, message = "O link da foto não pode ser maior do que 5000 caracteres")
 	private String foto;
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "usuario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("usuario")
 	private List<Postagem> postagem;
 	
+	/* Criar os Métodos Construtores*/
 	
 	public Usuario(Long id, String nome, String usuario, String senha, String foto) {
 		this.id = id;
@@ -55,6 +56,8 @@ public class Usuario {
 	}
 	
 	public Usuario() { }
+
+	/* Insira os Getters and Setters */
 
 	public Long getId() {
 		return this.id;

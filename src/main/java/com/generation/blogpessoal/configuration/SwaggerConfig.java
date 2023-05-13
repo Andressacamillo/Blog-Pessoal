@@ -16,24 +16,16 @@ import io.swagger.v3.oas.models.responses.ApiResponses;
 public class SwaggerConfig {
 
 	@Bean
-    OpenAPI springBlogPessoalOpenAPI() {
-        return new OpenAPI()
-            .info(new Info()
-                .title("Projeto Blog Pessoal Andressa Camillo")
-                .description("Projeto Blog Pessoal - Generation Brasil")
-                .version("v0.0.1")
-                .license(new License()
-                    .name("Andressa Camillo")
-                    .url("https://brazil.generation.org/"))
-                .contact(new Contact()
-                    .name("Andressa Camillo")
-                    .url("https://github.com/Andressacamillo")
-                    .email("camilloandressa@outlook.com")))
-            .externalDocs(new ExternalDocumentation()
-                .description("Github")
-                .url("https://github.com/Andressacamillo/Blog-Pessoal"));
-    }
-
+	OpenAPI springBlogPessoalOpenAPI() {
+		return new OpenAPI()
+				.info(new Info().title("Projeto Blog Pessoal Andressa").description("Projeto Blog Pessoal - Generation Brasil")
+						.version("v0.0.1")
+						.license(new License().name("Generation Brasil").url("https://brazil.generation.org/"))
+						.contact(new Contact().name("Andressa Camillo").url("https://github.com/Andressacamillo")
+								.email("andressacamillo17@gmail.com")))
+				.externalDocs(new ExternalDocumentation().description("Github")
+						.url("https://github.com/Andressacamillo/Blog-Pessoal"));
+	}
 
 	@Bean
 	public OpenApiCustomizer customerGlobalHeaderOpenApiCustomiser() {
